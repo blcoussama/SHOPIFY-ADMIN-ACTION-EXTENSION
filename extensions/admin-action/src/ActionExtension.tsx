@@ -6,6 +6,7 @@ import {
   BlockStack,
   Button,
   Text,
+  Select,
 } from '@shopify/ui-extensions-react/admin';
 
 // The target used here must match the target used in the extension's toml file (./shopify.extension.toml)
@@ -18,6 +19,8 @@ function App() {
   const {i18n, close, data} = useApi(TARGET);
   console.log({data});
   const [productTitle, setProductTitle] = useState('');
+  const [productVariants, setProductVariants] = useState([]);
+  const [selectedVariant, setSelectedVariant] = useState(null);
   // Use direct API calls to fetch data from Shopify.
   // See https://shopify.dev/docs/api/admin-graphql for more information about Shopify's GraphQL API
   useEffect(() => {
@@ -26,6 +29,14 @@ function App() {
         query: `query Product($id: ID!) {
           product(id: $id) {
             title
+            variants(first: 10) {
+              edges {
+                node {
+                  id
+                  title
+                }
+              }
+            }
           }
         }`,
         variables: {id: data.selected[0].id},
@@ -42,6 +53,8 @@ function App() {
 
       const productData = await res.json();
       setProductTitle(productData.data.product.title);
+      setProductVariants(productData.data.product.variants.edges);
+      setSelectedVariant(productData.data.product.variants.edges[0].node.id);
     })();
   }, [data.selected]);
   return (
@@ -72,7 +85,16 @@ function App() {
         {/* Set the translation values for each supported language in the locales directory */}
         <Text fontWeight="bold">{i18n.translate('welcome', {target: TARGET})}</Text>
         <Text>Current product: {productTitle}</Text>
+        <Text>Selected Variant: {selectedVariant}</Text>
+        <Select 
+          options={productVariants.map((variant) => ({
+            value: variant.node.id,
+            label: variant.node.title
+          }))} 
+          onChange={(value) => setSelectedVariant(value)}
+          label='Select a Variant'
+          />
       </BlockStack>
     </AdminAction>
   );
-}
+} 

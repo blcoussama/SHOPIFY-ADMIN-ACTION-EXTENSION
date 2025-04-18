@@ -1,4 +1,4 @@
 {
-  "name": "admin-action",
+  "name": "Generate Checkout link",
   "welcome": "Welcome to the {{target}} extension!"
 }

@@ -3,7 +3,7 @@
 client_id = "c2faa9cb68e4b1436ab9f4ffe1bbdb71"
 name = "admin-action-extension-app"
 handle = "admin-action-extension-app-2"
-application_url = "https://calendars-serving-toys-safe.trycloudflare.com"
+application_url = "https://burst-phentermine-biggest-ukraine.trycloudflare.com"
 embedded = true
 
 [build]
@@ -27,9 +27,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://calendars-serving-toys-safe.trycloudflare.com/auth/callback",
-  "https://calendars-serving-toys-safe.trycloudflare.com/auth/shopify/callback",
-  "https://calendars-serving-toys-safe.trycloudflare.com/api/auth/callback"
+  "https://burst-phentermine-biggest-ukraine.trycloudflare.com/auth/callback",
+  "https://burst-phentermine-biggest-ukraine.trycloudflare.com/auth/shopify/callback",
+  "https://burst-phentermine-biggest-ukraine.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
