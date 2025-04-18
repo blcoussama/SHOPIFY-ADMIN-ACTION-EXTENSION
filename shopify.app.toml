@@ -3,7 +3,7 @@
 client_id = "c2faa9cb68e4b1436ab9f4ffe1bbdb71"
 name = "admin-action-extension-app"
 handle = "admin-action-extension-app-2"
-application_url = "https://burst-phentermine-biggest-ukraine.trycloudflare.com"
+application_url = "https://school-era-tablet-sciences.trycloudflare.com"
 embedded = true
 
 [build]
@@ -23,13 +23,13 @@ api_version = "2025-04"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products, write_draft_orders"
 
 [auth]
 redirect_urls = [
-  "https://burst-phentermine-biggest-ukraine.trycloudflare.com/auth/callback",
-  "https://burst-phentermine-biggest-ukraine.trycloudflare.com/auth/shopify/callback",
-  "https://burst-phentermine-biggest-ukraine.trycloudflare.com/api/auth/callback"
+  "https://school-era-tablet-sciences.trycloudflare.com/auth/callback",
+  "https://school-era-tablet-sciences.trycloudflare.com/auth/shopify/callback",
+  "https://school-era-tablet-sciences.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
